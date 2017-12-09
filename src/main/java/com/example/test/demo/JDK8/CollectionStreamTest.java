@@ -2,12 +2,13 @@
 * Copyright (c) 201 3 , FPX and/or its affiliates. All rights reserved.
 * Use, Copy is subject to authorized license.
 */
-package com.example.test.demo;
+package com.example.test.demo.JDK8;
 
 import java.util.*;
 
 /**
  * JDK8  Collection Stream
+ * 经测试 JDK8的集合流操作的性能貌似没以前的写法好
  * Streams API 是 Java 8 中新发布的 API，主要用于操作 collection 和 streaming 数据。
  * Collections API 会改变数据集状态，而 Streams API 则不会。例如，当你调用Collections.sort(list)时，该方法会对传入的参数进行排序，而调用list.stream().sorted() 则会复制一份数据进行操作，保持原数据不变。
  */
