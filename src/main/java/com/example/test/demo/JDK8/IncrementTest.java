@@ -12,13 +12,11 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
 /**
- * 测试比 AtomicLong 更加搞笑的无锁LongAdder  (顺便对比 AtomicInteger)
+ * 测试比 AtomicLong 更加搞笑的无锁 LongAdder  (顺便对比 AtomicInteger)
+ * 实测,JDK8的LongAdder更加高效(特别在高并发情况下)
  */
 public class IncrementTest {
-    /*
-     * Copyright (c) 201 3 , FPX and/or its affiliates. All rights reserved.
-     * Use, Copy is subject to authorized license.
-     */
+
     final int MAX_THREAD_NUM = 60;
     final int INCEMENT_NUM = 10000000;
     CountDownLatch countDownLatch = new CountDownLatch(MAX_THREAD_NUM);
