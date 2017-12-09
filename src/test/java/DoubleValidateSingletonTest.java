@@ -1,4 +1,4 @@
-package com.example.test.demo.EnumSingleton;
+package test;
 
 import com.example.test.demo.EnumSingleton.DoubleValidateSingleton;
 import org.junit.Test;

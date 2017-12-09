@@ -9,6 +9,7 @@ package com.example.test.demo.EnumSingleton;
  *
  * 故,建议使用这种方式实践,代码短小精悍;
  * 无线程安全问题,无需序列化/反序列化/反射(攻击)问题
+ * 但是『据（安卓优化）闻』enum 生成的单例比 static 生成的单例消耗多近一倍的内存，故在 Android上尽量不用 enum
  *
  * 关于反射攻击 以及enum原理可以在这篇文章进一步学习
  * ↓↓↓
