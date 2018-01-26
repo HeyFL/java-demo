@@ -8,7 +8,13 @@ import com.example.test.demo.domain.Student;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 
-
+/**
+ *
+ * @author caizq
+ * @param  * @param null
+ * @date 2018/1/26
+ * @since v1.0.0
+ */
 //@Log4j2
 public class LombokTest {
     public static void main(String[] args) {

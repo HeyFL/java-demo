@@ -13,6 +13,13 @@ import org.redisson.config.Config;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 
+ * @author caizq
+ * @param  * @param null
+ * @date 2018/1/26
+ * @since v1.0.0
+ */
 public class RedissionTest {
     private static Config config = new Config();
     private static RedissonClient redisson;
