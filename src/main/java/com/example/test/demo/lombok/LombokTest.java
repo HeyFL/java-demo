@@ -8,7 +8,6 @@ import com.example.test.demo.domain.Student;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 //@Log4j2
 public class LombokTest {
