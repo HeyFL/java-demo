@@ -10,11 +10,13 @@ import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 
+ *
  * @author caizq
  * @param  * @param null
  * @date 2018/1/26
@@ -28,6 +30,7 @@ public class RedissionTest {
                 "redis://127.0.0.1:7003","redis://127.0.0.1:7004", "redis://127.0.0.1:7005");
         redisson = Redisson.create(config);
     }
+    private static ExecutorService pool = Executors.newFixedThreadPool(50);
     private static AtomicInteger count = new AtomicInteger(0);
     public void testRedLock(){
         //多把锁是为了让锁加在不同节点上,理论上  这里的锁越多分布的节点越是均匀,容灾效果越好
@@ -42,11 +45,11 @@ public class RedissionTest {
             //lock.unlock();
             //lock.lock();
 
-            // 尝试加锁，最多等待1秒，上锁以后10秒自动解锁
+            // 尝试加锁，最多等待1秒，上锁以后10秒自动解锁  对于竞争激烈,处理时间长的,可以多次try或死循环try,不建议增加等待时间
             boolean res = lock.tryLock(1, 10, TimeUnit.SECONDS);
             if (res){
                 RAtomicLong atomicLong = redisson.getAtomicLong("myLong");
-                System.out.println("myLong = "+atomicLong.getAndIncrement());;
+                System.out.println("myLong = "+atomicLong.incrementAndGet());
             }else{
                 System.out.println("获取锁失败次数 = "+count.incrementAndGet());
             }
@@ -65,13 +68,13 @@ public class RedissionTest {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        for (int i = 0; i < 1; i++) {
-            new Thread(()->{
+        for (int i = 0; i < 10000; i++) {
+            pool.submit(new Thread(()->{
                 new RedissionTest().testRedLock();
-            }).start();
+            }));
         }
         Thread.sleep(1000 );
-        RedissionTest.redisson.shutdown();
+        //RedissionTest.redisson.shutdown();
 
     }
 }
