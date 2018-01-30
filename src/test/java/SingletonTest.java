@@ -1,3 +1,5 @@
+package test;
+
 import com.example.test.demo.EnumSingleton.SingletonEnum;
 import org.junit.Test;
 
@@ -10,7 +12,7 @@ public class SingletonTest {
     @Test
     public void testEnum(){
         SingletonEnum single = SingletonEnum.INSTANCE;
-        SingletonEnum.INSTANCE.printMethod();
+        single.printMethod();
 
         //Enum 不能创建实例
         //SingletonEnum single1 = new SingletonEnum();
