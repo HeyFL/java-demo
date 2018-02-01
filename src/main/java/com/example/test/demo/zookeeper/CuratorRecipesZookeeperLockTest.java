@@ -56,18 +56,9 @@ public class CuratorRecipesZookeeperLockTest {
             e.printStackTrace();
         } finally {
             unlock();
+            //lock.release();
             //client.close();
         }
-    }
-
-    private boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
-        try {
-            System.out.println(Thread.currentThread() + "  acquire read lock");
-            return lock.acquire(timeout, unit);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return true;
     }
 
     private boolean unlock() {
@@ -78,5 +69,15 @@ public class CuratorRecipesZookeeperLockTest {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
+        try {
+            System.out.println(Thread.currentThread() + "  acquire read lock");
+            return lock.acquire(timeout, unit);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
