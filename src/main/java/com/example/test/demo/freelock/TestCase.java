@@ -8,6 +8,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
+ *
+ * 相关无锁类来自: https://sourceforge.net/projects/amino-cbbs/files/
  * initVector 初始化用时间:2
  * testVector  randomReadspend time:369
  * initVector 初始化用时间:1
