@@ -19,7 +19,7 @@ public class CuratorRecipesZookeeperLockTest {
     private static String address = "127.0.0.1:2182,127.0.0.1:2181,127.0.0.1:2183";//master:2181,worker1:2181,worker2:2181
     private static CuratorFramework client = CuratorFrameworkFactory.newClient(address, new ExponentialBackoffRetry(1000, 3));//静态  不需要close
     //创建锁，为不可重入锁，即是获锁后，不可以再次获取，这里不作例子，使用和重入锁类似
-//InterProcessSemaphoreMutex lock = new InterProcessSemaphoreMutex(client, lockPath);
+    //InterProcessSemaphoreMutex lock = new InterProcessSemaphoreMutex(client, lockPath);
     static private ExecutorService pool = Executors.newFixedThreadPool(20);
 
     static {
