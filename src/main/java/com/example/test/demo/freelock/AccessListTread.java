@@ -2,7 +2,7 @@
  * Copyright (c) 201 3 , FPX and/or its affiliates. All rights reserved.
  * Use, Copy is subject to authorized license.
  */
-package com.example.test.demo.freeLock;
+package com.example.test.demo.freelock;
 
 import com.example.test.demo.aminoFrame.amino.ds.lockfree.LockFreeList;
 import com.example.test.demo.aminoFrame.amino.ds.lockfree.LockFreeVector;
@@ -58,16 +58,18 @@ class AccessListTread implements Runnable {
     public void initCopyOnWriteArrayList() {
         long startTime = System.currentTimeMillis();
         list = new CopyOnWriteArrayList();
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             list.add(i);
+        }
         System.out.println("initCopyOnWriteArrayList 初始化用时间:" + (System.currentTimeMillis() - startTime));
     }
 
     public void initVector() {
         long startTime = System.currentTimeMillis();
         list = new Vector();
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             list.add(i);
+        }
 
         System.out.println("initVector 初始化用时间:" + (System.currentTimeMillis() - startTime));
     }
@@ -75,16 +77,18 @@ class AccessListTread implements Runnable {
     public void initLockFreeList() {
         long startTime = System.currentTimeMillis();
         list = new LockFreeList();
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             list.add(i);
+        }
         System.out.println("initLockFreeList 初始化用时间:" + (System.currentTimeMillis() - startTime));
     }
 
     public void initLockFreeVector() {
         long startTime = System.currentTimeMillis();
         list = new LockFreeVector();
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             list.add(i);
+        }
         System.out.println("initLockFreeVector 初始化用时间:" + (System.currentTimeMillis() - startTime));
     }
 }

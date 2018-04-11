@@ -2,7 +2,7 @@
  * Copyright (c) 201 3 , FPX and/or its affiliates. All rights reserved.
  * Use, Copy is subject to authorized license.
  */
-package com.example.test.demo.freeLock;
+package com.example.test.demo.freelock;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
