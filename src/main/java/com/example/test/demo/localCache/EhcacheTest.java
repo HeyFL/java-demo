@@ -19,7 +19,7 @@ public class EhcacheTest {
     }
 
     /**
-     * 使用Ehcache 150ms内完成任务
+     * 使用Ehcache增删改【小】Value 150ms内完成任务
      * 同样利用阿里云Redis测试缓存用时149917ms
      *
      * 结论:本次实验本地缓存存取删除速度比远程Redis缓存快100倍
@@ -60,10 +60,10 @@ public class EhcacheTest {
         cacheManager.shutdown();
     }
     /**
-     * 使用Ehcache 100ms左右完成任务(不打印)
+     * 使用Ehcache增删改【大】Value 100ms左右完成任务(不打印)
      * 同样利用阿里云Redis测试缓存用时217570ms
      *
-     * 结论:本次实验本地缓存存取删除速度比远程Redis缓存快200倍
+     * 结论:本次实验本地缓存存取删除速度比远程Redis缓存快2000倍
      */
     private static void testEhcacheBigValue() {
         // 1. 创建缓存管理器
