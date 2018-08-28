@@ -1,18 +1,15 @@
-package com.example.test.demo.localCache;
+package com.example.test.demo.localcache;
 
 import com.example.test.demo.domain.Student;
 import com.example.test.demo.util.MethodSpendUtil;
-import net.sf.ehcache.Element;
-
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author caizq

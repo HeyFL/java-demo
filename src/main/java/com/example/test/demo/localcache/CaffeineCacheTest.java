@@ -2,7 +2,7 @@
  * Copyright (c) 2005-2018 , FPX and/or its affiliates. All rights reserved.
  * Use, Copy is subject to authorized license.
  */
-package com.example.test.demo.localCache;
+package com.example.test.demo.localcache;
 
 import com.example.test.demo.domain.Student;
 import com.example.test.demo.util.MethodSpendUtil;
@@ -20,7 +20,6 @@ import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 
 /**
