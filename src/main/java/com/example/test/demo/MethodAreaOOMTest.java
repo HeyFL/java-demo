@@ -15,7 +15,9 @@ import java.lang.reflect.Method;
  * <p>
  * 有效配置:
  * jdk7: -XX:PermSize=100m -XX:MaxPermSize=200m
+ * jdk8: -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m
  *
+ * 任何一个JVM参数的默认值可以通过-XX:+PrintFlagsFinal -version |grep JVMParamName获取，例如：-XX:+PrintFlagsFinal -version |grep MetaspaceSize
  * @author caizq
  * @date 2018/9/16
  * @since v1.0.0

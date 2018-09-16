@@ -12,6 +12,8 @@ import java.lang.reflect.Method;
  * <p>
  * 有效配置:
  * jdk7: -XX:PermSize=100m -XX:MaxPermSize=200m
+ * jdk8: -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m
+ * (-XX:MetaspaceSize=128m不是初始元空间大小,而是达到了128m后才会对该区域进行GC  初始化大小20.8m 默认MetaspaceSize也是20.8m)
  *
  * @author caizq
  * @date 2018/9/16
