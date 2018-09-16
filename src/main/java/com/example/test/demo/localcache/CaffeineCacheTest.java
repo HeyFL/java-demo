@@ -1,11 +1,7 @@
-/*
- * Copyright (c) 2005-2018 , FPX and/or its affiliates. All rights reserved.
- * Use, Copy is subject to authorized license.
- */
+
 package com.example.test.demo.localcache;
 
 import com.example.test.demo.domain.Student;
-import com.example.test.demo.util.MethodSpendUtil;
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
@@ -13,10 +9,10 @@ import com.github.benmanes.caffeine.cache.LoadingCache;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
@@ -46,21 +42,25 @@ public class CaffeineCacheTest {
 
     private static Map map = new ConcurrentHashMap(INITIAL_CAPACITY);
 
-    static {
-        for (int i = 0; i < INITIAL_CAPACITY; i++) {
-            keys.add(Integer.toString(i));
-            studentList.add(new Student( Integer.toString(new Random().nextInt(INITIAL_CAPACITY)),new Random().nextInt(INITIAL_CAPACITY),Integer.toString(new Random().nextInt(INITIAL_CAPACITY))));
-        }
-    }
+    //static {
+    //    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+    //        keys.add(Integer.toString(i));
+    //        studentList.add(new Student( Integer.toString(new Random().nextInt(INITIAL_CAPACITY)),new Random().nextInt(INITIAL_CAPACITY),Integer.toString(new Random().nextInt(INITIAL_CAPACITY))));
+    //    }
+    //}
 
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-
-        Cache cacheUtil = synLoadingTest();
-        MethodSpendUtil.spendMs(new CaffeineCacheTest(), "putSyn",cacheUtil);
-        MethodSpendUtil.spendMs(new CaffeineCacheTest(), "getSyn",cacheUtil);
-
-        MethodSpendUtil.spendMs(new CaffeineCacheTest(), "putConCurrentHashMap");
-        MethodSpendUtil.spendMs(new CaffeineCacheTest(), "getConCurrentHashMap");
+        BigDecimal i = new BigDecimal(1.0);
+        BigDecimal bigDecimal = new BigDecimal(0.7);
+        i = i.subtract(bigDecimal);
+        System.out.println(i.floatValue());
+        System.out.println(1f - 0.7);
+        //Cache cacheUtil = synLoadingTest();
+        //MethodSpendUtil.spendMs(new CaffeineCacheTest(), "putSyn",cacheUtil);
+        //MethodSpendUtil.spendMs(new CaffeineCacheTest(), "getSyn",cacheUtil);
+        //
+        //MethodSpendUtil.spendMs(new CaffeineCacheTest(), "putConCurrentHashMap");
+        //MethodSpendUtil.spendMs(new CaffeineCacheTest(), "getConCurrentHashMap");
     }
 
     private static void getSyn(Cache cacheUtil) {
