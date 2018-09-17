@@ -18,6 +18,7 @@ import java.lang.reflect.Method;
  * jdk8: -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m
  *
  * 任何一个JVM参数的默认值可以通过-XX:+PrintFlagsFinal -version |grep JVMParamName获取，例如：-XX:+PrintFlagsFinal -version |grep MetaspaceSize
+ * -XX:+PrintGCDetails
  * @author caizq
  * @date 2018/9/16
  * @since v1.0.0
