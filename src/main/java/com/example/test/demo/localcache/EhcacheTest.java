@@ -1,9 +1,15 @@
-package com.example.test.demo.localCache;
+package com.example.test.demo.localcache;
 
-import net.sf.ehcache.Element;
-
+import com.example.test.demo.domain.Student;
+import com.example.test.demo.util.MethodSpendUtil;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * @author caizq
@@ -11,20 +17,32 @@ import net.sf.ehcache.CacheManager;
  * @since v1.0.0
  */
 public class EhcacheTest {
-    public static final int INT = 9999;
+    public static final int INT = 9999999;
+    private static List<Student> studentList=new ArrayList<>(INT);
+    private static List<String> keys=new ArrayList<>(INT);
+    static {
+        for (int i = 0; i < INT; i++) {
+            keys.add(Integer.toString(i));
+            studentList.add(new Student( Integer.toString(new Random().nextInt(INT)),new Random().nextInt(INT),Integer.toString(new Random().nextInt(INT))));
+        }
+    }
 
-    public static void main(String[] args) {
-        testEhcacheBigValue();
+    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+        testEhcache();
 
     }
 
     /**
+<<<<<<< HEAD:src/main/java/com/example/test/demo/localCache/EhcacheTest.java
      * 使用Ehcache增删改【小】Value 150ms内完成任务
+=======
+     * 使用Ehcache 150ms内完成任务 (测试时INT=9999)
+>>>>>>> origin/master:src/main/java/com/example/test/demo/localcache/EhcacheTest.java
      * 同样利用阿里云Redis测试缓存用时149917ms
      *
      * 结论:本次实验本地缓存存取删除速度比远程Redis缓存快100倍
      */
-    private static void testEhcache() {
+    private static void testEhcache() throws InvocationTargetException, IllegalAccessException {
         // 1. 创建缓存管理器
         CacheManager cacheManager = CacheManager.create("./src/main/resources/ehcache.xml");
 
@@ -33,17 +51,9 @@ public class EhcacheTest {
 
         long start = System.currentTimeMillis();
         // 3. 创建元素
-        for (int i = 0; i < INT; i++) {
-            Element element = new Element("key"+i, i);
-            // 4. 将元素添加到缓存
-            cache.put(element);
-        }
-
+        MethodSpendUtil.spendMs(new EhcacheTest(),"putEle" ,cache);
         // 5. 获取缓存
-        for (int i = 0; i < INT; i++) {
-            Element value = cache.get("key"+i);
-            System.out.println(value);
-        }
+        MethodSpendUtil.spendMs(new EhcacheTest(),"getEle" ,cache);
 
         // 6. 删除元素
         for (int i = 0; i < INT; i++) {
@@ -59,6 +69,22 @@ public class EhcacheTest {
         // 8. 关闭缓存管理器
         cacheManager.shutdown();
     }
+
+    private static void getEle(Cache cache) {
+        for (int i = 0; i < INT; i++) {
+            Element value = cache.get(keys.get(i));
+            //System.out.println(value);
+        }
+    }
+
+    private static void putEle(Cache cache) {
+        for (int i = 0; i < INT; i++) {
+            Element element = new Element(keys.get(i), studentList.get(i));
+            // 4. 将元素添加到缓存
+            cache.put(element);
+        }
+    }
+
     /**
      * 使用Ehcache增删改【大】Value 100ms左右完成任务(不打印)
      * 同样利用阿里云Redis测试缓存用时217570ms

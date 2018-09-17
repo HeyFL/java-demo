@@ -19,10 +19,10 @@
 
     <!-- helloworld缓存 -->
     <cache name="HelloWorldCache"
-           maxElementsInMemory="10000"
+           maxElementsInMemory="100000000"
            eternal="false"
-           timeToIdleSeconds="10"
-           timeToLiveSeconds="10"
+           timeToIdleSeconds="100"
+           timeToLiveSeconds="100"
            overflowToDisk="false"
            memoryStoreEvictionPolicy="LRU"/>
 </ehcache>
