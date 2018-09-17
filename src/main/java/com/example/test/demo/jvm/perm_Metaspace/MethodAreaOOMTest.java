@@ -1,5 +1,5 @@
 
-package com.example.test.demo.jvm.perm;
+package com.example.test.demo.jvm.perm_Metaspace;
 
 import com.example.test.demo.domain.Student;
 import lombok.extern.slf4j.Slf4j;

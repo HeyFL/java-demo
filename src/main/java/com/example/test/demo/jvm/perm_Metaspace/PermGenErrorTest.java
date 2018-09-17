@@ -1,4 +1,4 @@
-package com.example.test.demo.jvm.perm;
+package com.example.test.demo.jvm.perm_Metaspace;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class PermGenErrorTest {
 
     /**
      * 测试常量池导致 溢出
-     * JDK8不会溢出 TODO 可能是因为把常量池移到堆里了？
+     * JDK8不会溢出 TODO 可能是因为把常量池移到元空间里了？
      */
     private static void finalPoolFullError() {
         long i = 0;
