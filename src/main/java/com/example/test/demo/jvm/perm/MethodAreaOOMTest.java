@@ -1,5 +1,5 @@
 
-package com.example.test.demo;
+package com.example.test.demo.jvm.perm;
 
 import com.example.test.demo.domain.Student;
 import lombok.extern.slf4j.Slf4j;
