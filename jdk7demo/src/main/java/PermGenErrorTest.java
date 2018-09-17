@@ -1,10 +1,9 @@
-package com.example.test.demo.jvm.perm_Metaspace;
-
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * -XX:PermSize=10M -XX:MaxPermSize=10M
+ * -XX:PermSize=50M -XX:MaxPermSize=50M
+ * -Xms100m -Xmx100m
  * JDK8下以上配置无效
  */
 public class PermGenErrorTest {
