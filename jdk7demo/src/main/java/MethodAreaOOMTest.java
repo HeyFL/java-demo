@@ -22,17 +22,21 @@ import java.lang.reflect.Method;
 @Slf4j
 public class MethodAreaOOMTest {
     public static void main(final String[] args) {
-        while (true) {
-            Enhancer enhancer = new Enhancer();
-            enhancer.setSuperclass(Student.class);
-            enhancer.setUseCache(false);
-            enhancer.setCallback(new MethodInterceptor() {
-                @Override
-                public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                    return methodProxy.invokeSuper(objects, args);
-                }
-            });
-            enhancer.create();
+        try {
+            while (true) {
+                Enhancer enhancer = new Enhancer();
+                enhancer.setSuperclass(Student.class);
+                enhancer.setUseCache(false);
+                enhancer.setCallback(new MethodInterceptor() {
+                    @Override
+                    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+                        return methodProxy.invokeSuper(objects, args);
+                    }
+                });
+                enhancer.create();
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 }

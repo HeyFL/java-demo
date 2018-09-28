@@ -1,5 +1,5 @@
 
-package com.example.test.demo;
+package com.example.test.demo.jvm.direct_memory;
 
 import sun.misc.Unsafe;
 import sun.misc.VM;
