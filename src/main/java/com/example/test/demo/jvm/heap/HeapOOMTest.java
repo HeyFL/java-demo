@@ -4,9 +4,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -XX:+HeapDumpOnOutOfMemoryError
- * -XX:+PrintCommandLineFlags
- * -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
+ * <--输出JVM参数-->
+ * -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal  -XX:+PrintCommandLineFlags -showversion
+ *
+ * <--输出OOM错误-->
+ * -XX:+HeapDumpOnOutOfMemoryError
+ *
+ * <--GC日志参数-->
+ * -XX:+PrintGCDetails -XX:+PrintGCTimeStamps and -XX:+PrintGCDateStamps
+ *
+ * -Xms20m -Xmx20m
  */
 public class HeapOOMTest {
     public static void main(String[] args) {
