@@ -5,7 +5,11 @@ import lombok.Data;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * -Xss128k
+ * StackOverFlow每次深度不一样是因为JIT优化
+ * -Djava.compiler=NONE禁用JIT优化后每次深度一样
+ *
+ *
+ * 测试参数：-Xss128k
  */
 @Data
 public class StackErrorTest {
@@ -13,16 +17,16 @@ public class StackErrorTest {
 
     public static void main(String[] args) throws InterruptedException {
         //1. 测试错误StackOverFlow
-        //testStackOverFlow();
+        testStackOverFlow();
 
 
         //2.测试错误OOM
-        testOOM();
+        //testOOM();
 
     }
 
     private static void testStackOverFlow() {
-        new Thread(() -> {
+        //new Thread(() -> {
             StackErrorTest testData = new StackErrorTest();
             try {
 
@@ -31,7 +35,7 @@ public class StackErrorTest {
                 System.out.println(Thread.currentThread().getName() + " " + i.get());
 
             }
-        }).start();
+        //}).start();
     }
 
     /**
