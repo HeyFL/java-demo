@@ -17,14 +17,21 @@ public class StackErrorTest {
 
     public static void main(String[] args) throws InterruptedException {
         //1. 测试错误StackOverFlow
-        testStackOverFlow();
+        //testStackOverFlow();
 
 
         //2.测试错误OOM
-        //testOOM();
+        testOOM();
 
     }
 
+    /**
+     * StackOverFlow每次深度不一样是因为JIT优化
+     * -Djava.compiler=NONE禁用JIT优化后每次深度一样
+     *
+     *
+     * 测试参数：-Xss128k
+     */
     private static void testStackOverFlow() {
         //new Thread(() -> {
             StackErrorTest testData = new StackErrorTest();
@@ -38,10 +45,13 @@ public class StackErrorTest {
         //}).start();
     }
 
+
+    private static int ONE_MB=1024*1024;
+    private static byte[] bytes = new byte[1024*ONE_MB];
     /**
      * 2.测试错误OOM
-     * (结果：与每个线程栈空间-Xss无关 只与jvm可分配的『所有栈』大小总和有关)
-     * 『所有栈』大小jvm 除去其他空间，剩下的可分配内存有关
+     * (结果：【java虚拟机栈】大小-Xss无关 只与jvm可分配的『所有栈』大小总和有关)
+     * 【java虚拟机栈】大小为jvm 除去其他空间，剩下的可分配内存有关
      */
     private static void testOOM() {
         try {
@@ -53,15 +63,12 @@ public class StackErrorTest {
                 }).start();
             }
         } catch (Throwable e) {
-            System.out.println(i.get());
+            System.out.println("创建了"+i.get()+"条线程");
             e.printStackTrace();
         }
     }
 
-    public void test1() {
-        i.addAndGet(1);
-        test1();
-    }
+
 
     public void test2() {
         while (true) {
@@ -71,5 +78,10 @@ public class StackErrorTest {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void test1() {
+        i.addAndGet(1);
+        test1();
     }
 }

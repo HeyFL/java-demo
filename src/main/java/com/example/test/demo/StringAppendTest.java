@@ -12,6 +12,10 @@ public class StringAppendTest {
 //        testString();
 //        testStringBuilder();
 //        testStringBuffer();
+        String s = new String ("1");
+        String s1 = "1";
+        String s2 = "1";
+        System.out.println(s1);
     }
 
     private static void testStringBuffer() {
