@@ -25,7 +25,7 @@ public class PermGenErrorTest {
      * All strings are now located in the heap, as most of other ordinary objects, which allows you to manage only the heap size while tuning your application
      */
     private static void finalPoolFullError() {
-        long i = 0;
+        double i = 0;
         List<String> stringList = new LinkedList<>();
         while (true) {
             stringList.add(String.valueOf(i++).intern());

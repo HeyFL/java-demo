@@ -12,6 +12,11 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ *<dependency>
+ *             <groupId>net.sf.ehcache</groupId>
+ *             <artifactId>ehcache</artifactId>
+ *             <version>2.10.2</version>
+ *         </dependency>
  * @author caizq
  * @date 2018/6/5
  * @since v1.0.0
