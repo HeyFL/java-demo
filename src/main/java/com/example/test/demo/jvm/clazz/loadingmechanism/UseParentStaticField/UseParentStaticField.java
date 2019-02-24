@@ -14,6 +14,9 @@ package com.example.test.demo.jvm.clazz.loadingmechanism.UseParentStaticField;
 public class UseParentStaticField {
     public static void main(String[] args) {
 
-        System.out.println(SubClazz.value);
+        //System.out.println(SubClazz.value);
+        new SubClazz();
+        new SubClazz();
+        new SubClazz();
     }
 }
