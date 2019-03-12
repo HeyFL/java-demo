@@ -1,4 +1,4 @@
-package com.example.test.demo;
+package com.example.test.demo.collection;
 
 import java.util.HashMap;
 import java.util.WeakHashMap;

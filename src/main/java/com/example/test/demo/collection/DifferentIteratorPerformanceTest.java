@@ -1,4 +1,4 @@
-package com.example.test.demo;
+package com.example.test.demo.collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,15 +6,16 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * 比较不同itertor的遍历性能
  * 编译后  3个的源码几乎一致(都是以 while 实现)
  */
-public class IteratorTest {
+public class DifferentIteratorPerformanceTest {
     final int LIST_SIZE = 1000000;
     final int NUM_MAX = 1000000;
     final Random random = new Random(NUM_MAX);
     List<Integer> list = new ArrayList(LIST_SIZE);
 
-    public IteratorTest(){
+    public DifferentIteratorPerformanceTest() {
         for (int i = 0; i < LIST_SIZE; i++) {
             list.add(random.nextInt());
         }
@@ -37,7 +38,7 @@ public class IteratorTest {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        IteratorTest test = new IteratorTest();
+        DifferentIteratorPerformanceTest test = new DifferentIteratorPerformanceTest();
         long startTime = System.currentTimeMillis();
         test.testWhile();
         System.out.println(System.currentTimeMillis()-startTime+"ms");

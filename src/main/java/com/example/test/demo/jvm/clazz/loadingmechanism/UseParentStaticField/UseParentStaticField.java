@@ -12,11 +12,13 @@ package com.example.test.demo.jvm.clazz.loadingmechanism.UseParentStaticField;
  * @since v1.0.0
  */
 public class UseParentStaticField {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 
         //System.out.println(SubClazz.value);
-        new SubClazz();
-        new SubClazz();
-        new SubClazz();
+        //new SubClazz();
+        //new SubClazz();
+        //new SubClazz();
+        Class.forName("com.example.test.demo.jvm.clazz.loadingmechanism.UseParentStaticField.SubClazz");
+
     }
 }

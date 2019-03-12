@@ -2,7 +2,7 @@
 * Copyright (c) 201 3 , FPX and/or its affiliates. All rights reserved.
 * Use, Copy is subject to authorized license.
 */
-package com.example.test.demo;
+package com.example.test.demo.collection;
 
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
