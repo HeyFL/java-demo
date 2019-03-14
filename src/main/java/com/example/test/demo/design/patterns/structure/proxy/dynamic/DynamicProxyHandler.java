@@ -25,7 +25,6 @@ public class DynamicProxyHandler implements InvocationHandler {
 
     private void afterDo() {
         System.out.println("执行后");
-
     }
 
     @Override
