@@ -1,4 +1,4 @@
-package com.example.test.demo.design.patterns.builder;
+package com.example.test.demo.design.patterns.build.builder;
 
 import lombok.Data;
 

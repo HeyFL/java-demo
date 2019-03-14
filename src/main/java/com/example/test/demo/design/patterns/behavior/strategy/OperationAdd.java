@@ -1,4 +1,4 @@
-package com.example.test.demo.design.patterns.strategy;
+package com.example.test.demo.design.patterns.behavior.strategy;
 
 public class OperationAdd implements Strategy {
     @Override

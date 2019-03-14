@@ -1,4 +1,4 @@
-package com.example.test.demo.design.patterns.builder;
+package com.example.test.demo.design.patterns.build.builder;
 
 public class BuilderTest {
     public static void main(String[] args) throws InterruptedException {
