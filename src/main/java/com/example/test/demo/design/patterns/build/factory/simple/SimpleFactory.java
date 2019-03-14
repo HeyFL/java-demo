@@ -34,7 +34,7 @@ public class SimpleFactory {
         return instance;
     }
 
-    public Phone getPhone(EnumPhoneType phoneType) {
+    public Phone create(EnumPhoneType phoneType) {
         switch (phoneType) {
             case MI:
                 return new XiaoMiPhone();

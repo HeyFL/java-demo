@@ -15,7 +15,7 @@ import com.example.test.demo.design.patterns.build.factory.Phone;
 public class SimpleFactoryTest {
     public static void main(String[] args) {
         SimpleFactory instance = SimpleFactory.getInstance();
-        Phone phone = instance.getPhone(EnumPhoneType.HUA);
+        Phone phone = instance.create(EnumPhoneType.HUA);
         phone.call();
     }
 }
