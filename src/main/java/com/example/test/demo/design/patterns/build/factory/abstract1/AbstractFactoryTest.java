@@ -11,11 +11,16 @@ import com.example.test.demo.design.patterns.build.factory.Phone;
 
 /**
  * @author caizq
- * @date 2019/3/14
+ * @date 2019/3/15
  * @since v1.0.0
  */
-public interface AbstractFactory {
-    Phone createPhone(EnumPhoneType phoneType);
+public class AbstractFactoryTest {
+    public static void main(String[] args) {
+        AbstractFactory instance = HighClassFactory.getInstance();
+        Phone phone = instance.createPhone(EnumPhoneType.HUA);
+        Headset headset = instance.createHeadset(EnumHeadsetType.AIRPOD1);
+        phone.call();
+        headset.heard();
 
-    Headset createHeadset(EnumHeadsetType headsetType);
+    }
 }
