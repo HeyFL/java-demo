@@ -1,7 +1,4 @@
-/*
- * Copyright (c) 2005-2018 , FPX and/or its affiliates. All rights reserved.
- * Use, Copy is subject to authorized license.
- */
+
 package com.example.test.demo.design.patterns.build.factory.simple;
 
 import com.example.test.demo.design.patterns.build.factory.EnumPhoneType;
@@ -11,6 +8,9 @@ import com.example.test.demo.design.patterns.build.factory.XiaoMiPhone;
 
 /**
  * 简单工厂/静态工厂方法
+ *
+ * 1个工厂，生成1类产品
+ * 如：生产【小米手机】和【华为手机】
  *
  * @author caizq
  * @date 2019/3/14

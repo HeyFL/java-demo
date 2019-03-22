@@ -20,7 +20,8 @@ public class StrategyTest {
     private static void defaultStrategy() {
         int a=1;
         int b=5;
-        Context context = new Context(new OperationAdd());
+        OperationAdd operationAdd = new OperationAdd();
+        Context context = new Context(operationAdd);
         int result = context.doOperation(a,b);
         System.out.println(result);
     }

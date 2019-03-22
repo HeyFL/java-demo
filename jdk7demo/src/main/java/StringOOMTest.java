@@ -1,7 +1,4 @@
-/*
- * Copyright (c) 2005-2018 , FPX and/or its affiliates. All rights reserved.
- * Use, Copy is subject to authorized license.
- */
+
 
 /**
  * 证明常量池存在于堆里,"字符串"会在运行时才把对应的值放进常量池

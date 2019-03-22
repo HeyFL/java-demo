@@ -1,7 +1,4 @@
-/*
- * Copyright (c) 2005-2018 , FPX and/or its affiliates. All rights reserved.
- * Use, Copy is subject to authorized license.
- */
+
 package com.example.test.demo.jvm.g1;
 
 import lombok.extern.slf4j.Slf4j;
