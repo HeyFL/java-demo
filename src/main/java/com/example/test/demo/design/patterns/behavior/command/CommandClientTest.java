@@ -11,6 +11,10 @@ import lombok.extern.slf4j.Slf4j;
  * <p>
  * 每次新增命令都要新增对应的Command实现类与Group实现类
  *
+ * 与策略模式的区别:
+ * 命令模式有不同的目的
+ * 策略模式有相同的目的，对于该目的有不同的算法
+ *
  * @author caizq
  * @date 2019/3/21
  * @since v1.0.0
