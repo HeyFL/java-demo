@@ -17,12 +17,9 @@
 
 public class StringOOMTest {
     public static void main(String[] args) throws InterruptedException {
-        Thread.sleep(8000);
         test();//执行前 堆占2m   执行后占3m
-        Thread.sleep(8000);
         test();//执行前 堆占3m   执行后占3m
         testOtherStr();//执行前 堆占3m   执行后占4.5m
-        Thread.sleep(8000);
     }
 
     private static void test() throws InterruptedException {
