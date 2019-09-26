@@ -45,18 +45,16 @@ public class StackErrorTest {
         //}).start();
     }
 
-
-    //private static int ONE_MB=1024*1024;
-    //private static byte[] bytes = new byte[1024*ONE_MB];
     /**
      * 2.测试错误OOM
-     * 测试1: -Xss1g -Xms20m -Xmx1g
-     * 测试2: -Xss1g -Xms20m -Xmx2g
+     * 测试1: -Xms20m -Xmx20m
+     * 测试2: -Xms2000m -Xmx2000m
      * (结果：【java虚拟机栈】大小-Xss无关 只与jvm可分配的『所有栈』大小总和有关)
      * 【java虚拟机栈】大小为jvm 除去其他空间，剩下的可分配内存有关
      */
     private static void testOOM() throws InterruptedException {
         try {
+            Thread.sleep(5000);
             while (true) {
                 new Thread(() -> {
                     StackErrorTest testData = new StackErrorTest();
