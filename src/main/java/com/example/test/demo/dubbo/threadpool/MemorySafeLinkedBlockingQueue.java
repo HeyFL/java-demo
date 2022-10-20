@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
  *
  * desc 1.可以限制总内存的大小,比如256M, 消耗一点性能  换取更高的可用性 比一般的LinkedBlockingQueue好
  * desc 2.代码见 https://github.com/apache/dubbo.git
+ * desc 3. 使用参考MemorySafeLinkedBlockingQueueTest
  */
 public class MemorySafeLinkedBlockingQueue<E> extends LinkedBlockingQueue<E> {
 
